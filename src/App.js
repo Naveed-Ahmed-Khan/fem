@@ -9,8 +9,13 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import { useStateContext } from "./contexts/ContextProvider";
 import { useEffect } from "react";
+import EvaluationForm from "./pages/EvaluationForm";
+import TeacherProfile from "./pages/TeacherProfile";
+import EvaluationStats from "./pages/EvaluationStats";
 
 function App() {
+  const user = localStorage.getItem("user");
+
   return (
     <div className="">
       <Routes>
@@ -21,8 +26,12 @@ function App() {
         <Route path="/" element={<Dashboard />}>
           {/* Students  */}
           <Route path="/profile" element={<StudentProfile />} />
+          <Route path="/teacher-profile" element={<TeacherProfile />} />
+
           <Route path="/check-students" element={<CheckStudents />} />
           <Route path="/add-student" element={<AddStudent />} />
+          <Route path="/evaluationform" element={<EvaluationForm />} />
+          <Route path="/evaluationstats" element={<EvaluationStats />} />
 
           {/* Tutors  */}
           <Route path="/check-teachers" element={<CheckTeachers />} />

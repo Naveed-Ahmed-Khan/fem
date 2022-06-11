@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const FormsTable = () => {
+const FormsTable2 = () => {
   const navigate = useNavigate();
   return (
     <div className="container mx-auto px-4 sm:px-8 max-w-4xl">
@@ -23,20 +23,19 @@ const FormsTable = () => {
                     scope="col"
                     className="font-medium px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
                   >
-                    Teachers
-                  </th>
-                  <th
-                    scope="col"
-                    className="font-medium px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
-                  >
                     Courses
                   </th>
-
                   <th
                     scope="col"
                     className="font-medium px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
                   >
-                    Evaluation status
+                    Status
+                  </th>
+                  <th
+                    scope="col"
+                    className="font-medium px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
+                  >
+                    Forms Filled
                   </th>
                   <th
                     scope="col"
@@ -49,15 +48,6 @@ const FormsTable = () => {
               <tbody>
                 <tr>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <div className="flex items-center">
-                      <div className="ml-3">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          Jean marc
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <p className="text-gray-900 whitespace-no-wrap">CS101</p>
                   </td>
 
@@ -67,70 +57,24 @@ const FormsTable = () => {
                         aria-hidden="true"
                         className="absolute inset-0 bg-red-300 opacity-50 rounded-full"
                       ></span>
-                      <span className="relative">Not Evaluated</span>
+                      <span className="relative">Not Ready</span>
                     </span>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <button
-                      onClick={() => {
-                        navigate("/evaluationform");
-                      }}
-                      className="text-indigo-600 hover:text-indigo-900 "
-                    >
-                      <p className="hover:underline hover:underline-offset-2">
-                        Evaluate
-                      </p>
+                    <p className="text-gray-900 text-base font-medium whitespace-no-wrap">
+                      --/--
+                    </p>
+                  </td>
+                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <button disabled className="text-slate-600">
+                      Check
                     </button>
                   </td>
                 </tr>
-                <tr>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <div className="flex items-center">
-                      <div className="ml-3">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          Marcus coco
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">SE101</p>
-                  </td>
 
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-red-300 opacity-50 rounded-full"
-                      ></span>
-                      <span className="relative">Not Evaluated</span>
-                    </span>
-                  </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <button
-                      onClick={() => {
-                        navigate("/evaluationform");
-                      }}
-                      className="text-indigo-600 hover:text-indigo-900 "
-                    >
-                      <p className="hover:underline hover:underline-offset-2">
-                        Evaluate
-                      </p>
-                    </button>
-                  </td>
-                </tr>
                 <tr>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <div className="flex items-center">
-                      <div className="ml-3">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          Ecric marc
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">EN101</p>
+                    <p className="text-gray-900  whitespace-no-wrap">EN101</p>
                   </td>
 
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -143,37 +87,20 @@ const FormsTable = () => {
                     </span>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <button disabled className="text-slate-600">
-                      Evaluate
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <div className="flex items-center">
-                      <div className="ml-3">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          Julien Huger
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-gray-900 text-base font-medium whitespace-no-wrap">
+                      74 / 80
+                    </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">MA203</p>
-                  </td>
-
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                      ></span>
-                      <span className="relative">Evaluated</span>
-                    </span>
-                  </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <button disabled className="text-slate-600">
-                      Evaluate
+                    <button
+                      onClick={() => {
+                        navigate("/evaluationstats");
+                      }}
+                      className="text-indigo-600 hover:text-indigo-900 "
+                    >
+                      <p className="hover:underline hover:underline-offset-2">
+                        Check
+                      </p>
                     </button>
                   </td>
                 </tr>
@@ -244,4 +171,4 @@ const FormsTable = () => {
   );
 };
 
-export default FormsTable;
+export default FormsTable2;

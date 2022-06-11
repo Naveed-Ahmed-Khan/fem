@@ -678,6 +678,17 @@ export const studentLinks = [
     ],
   },
 ];
+export const teacherLinks = [
+  {
+    title: "Home",
+    links: [
+      {
+        name: "teacher-profile",
+        icon: <FiShoppingBag />,
+      },
+    ],
+  },
+];
 
 export const links = [
   {
@@ -3225,13 +3236,11 @@ export const lineCustomSeries = [
 ];
 
 export const pieChartData = [
-  { x: "Labour", y: 18, text: "18%" },
-  { x: "Legal", y: 8, text: "8%" },
-  { x: "Production", y: 15, text: "15%" },
-  { x: "License", y: 11, text: "11%" },
-  { x: "Facilities", y: 18, text: "18%" },
-  { x: "Taxes", y: 14, text: "14%" },
-  { x: "Insurance", y: 16, text: "16%" },
+  { x: "Poor", y: 10, text: "10%" },
+  { x: "Unsatisfactory", y: 10, text: "10%" },
+  { x: "Satisfactory", y: 25, text: "25%" },
+  { x: "Fair", y: 25, text: "25%" },
+  { x: "Good", y: 30, text: "30%" },
 ];
 
 export const contextMenuItems = [

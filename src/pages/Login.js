@@ -30,8 +30,10 @@ const Login = () => {
 
       if (values.email.includes("admin")) {
         navigate("/check-students");
-      } else {
+      } else if (values.email.includes("student")) {
         navigate("/profile");
+      } else {
+        navigate("/teacher-profile");
       }
       // alert(JSON.stringify(values, null, 2));
       //   login(values.email, values.password);
