@@ -698,10 +698,10 @@ export const links = [
         name: "check-students",
         icon: <FiShoppingBag />,
       },
-      {
+      /* {
         name: "profile",
         icon: <FiShoppingBag />,
-      },
+      }, */
       {
         name: "add-student",
         icon: <FiShoppingBag />,
