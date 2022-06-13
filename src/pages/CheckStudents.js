@@ -1,7 +1,3 @@
-/* eslint-disable jsx-quotes */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable quotes */
-/* eslint-disable arrow-body-style */
 import React from "react";
 import {
   GridComponent,

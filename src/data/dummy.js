@@ -42,6 +42,7 @@ import product4 from "./product4.jpg";
 import product5 from "./product5.jpg";
 import product6 from "./product6.jpg";
 import product7 from "./product7.jpg";
+import { Link, useNavigate } from "react-router-dom";
 // import product8 from './product8.jpg';
 
 export const gridOrderImage = (props) => (
@@ -78,6 +79,86 @@ export const kanbanGrid = [
 
   { headerText: "Done", keyField: "Close", allowToggle: true },
 ];
+
+export const teachersProfileTemplate = (props) => {
+  console.log(props);
+  return (
+    <table className="detailtable" style={{ width: "100%" }}>
+      <colgroup>
+        <col style={{ width: "20%" }} />
+        <col style={{ width: "25%" }} />
+        <col style={{ width: "20%" }} />
+        <col style={{ width: "35%" }} />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td rowSpan={4} className="images">
+            <img
+              className="object-contain h-44 rounded"
+              src={props?.EmployeeImage}
+              alt={props.EmployeeID}
+            />
+          </td>
+          <td>
+            <span style={{ fontWeight: 500 }}>ID: </span> {props?.EmployeeID}
+          </td>
+          <td>
+            <span style={{ fontWeight: 500 }}>Forms Evaluated: </span> 74
+          </td>
+          {/* <td>
+            <span style={{ fontWeight: 500 }}>Total Forms: </span>
+            85
+          </td> */}
+        </tr>
+        <tr>
+          <td>
+            <span style={{ fontWeight: 500 }}>Name: </span> {props?.Name}
+          </td>
+          <td>
+            <span style={{ fontWeight: 500 }}>Total Forms: </span>
+            80
+          </td>
+          {/* <td>
+            <span style={{ fontWeight: 500 }}>Forms Filled:</span>
+            {props?.EmployeeID}
+          </td> */}
+        </tr>
+        <tr>
+          <td>
+            <span style={{ fontWeight: 500 }}>Department: </span> {props?.Title}
+          </td>
+          <td>
+            <span style={{ fontWeight: 500 }}>Courses Instructed: </span> CS101,
+            CS102, CS103
+          </td>
+          {/* <td>
+            <span style={{ fontWeight: 500 }}>Forms Remaining:</span>
+            {props?.EmployeeID}
+          </td> */}
+        </tr>
+        <tr>
+          <td>
+            <span style={{ fontWeight: 500 }}>Address: </span>
+            {props?.Country}
+          </td>
+          <td>
+            <Link to={"/evaluationstats"}>
+              <button className="text-indigo-600 hover:text-indigo-900 ">
+                <p className="hover:underline hover:underline-offset-2">
+                  Check Stats
+                </p>
+              </button>
+            </Link>
+          </td>
+          {/* <td>
+            <span style={{ fontWeight: 500 }}>Courses: </span>
+            {props?.ReportsTo}
+          </td> */}
+        </tr>
+      </tbody>
+    </table>
+  );
+};
 
 export const studentProfileTemplate = (props) => {
   console.log(props);
@@ -135,8 +216,8 @@ export const studentProfileTemplate = (props) => {
         </tr>
         <tr>
           <td>
-            <span style={{ fontWeight: 500 }}>Semester: </span>{" "}
-            {props?.HireDate}
+            <span style={{ fontWeight: 500 }}>Address: </span>
+            {props?.Country}
           </td>
           <td>
             <span style={{ fontWeight: 500 }}>Address: </span>
@@ -586,7 +667,7 @@ export const employeesGrid = [
 export const studentsGrid = [
   {
     headerText: "Name",
-    // field: "Name",
+    field: "Name",
     width: "150",
     template: gridEmployeeProfile,
     textAlign: "Center",
@@ -599,6 +680,7 @@ export const studentsGrid = [
   },
   {
     headerText: "ID",
+    field: "ID",
     width: "120",
     textAlign: "Center",
     template: gridEmployeeCountry,
@@ -626,40 +708,45 @@ export const studentsGrid = [
   },
 ];
 
-export const tutorsGrid = [
+export const teachersGrid = [
   {
     headerText: "Name",
+    field: "Name",
     width: "150",
     template: gridEmployeeProfile,
+
     textAlign: "Center",
   },
   {
     field: "Title",
-    headerText: "Courses",
+    headerText: "Department",
     width: "170",
     textAlign: "Center",
   },
   {
     headerText: "ID",
+    field: "ID",
     width: "120",
     textAlign: "Center",
+
     template: gridEmployeeCountry,
   },
 
   {
     field: "HireDate",
-    headerText: "Evaluation Status",
+    headerText: "Courses Instructed",
     width: "135",
     format: "yMd",
     textAlign: "Center",
   },
+
   /* {
     field: "ReportsTo",
     headerText: "Year",
     width: "120",
     textAlign: "Center",
-  },
-  {
+  }, */
+  /* {
     field: "EmployeeID",
     headerText: "GPA",
     width: "125",
