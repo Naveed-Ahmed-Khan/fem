@@ -17,28 +17,26 @@ function App() {
   const user = localStorage.getItem("user");
 
   return (
-    <div className="">
-      <Routes>
-        {/* Login  */}
-        <Route path="/" element={<Navigate replace to="/login" />} />
-        <Route path="/login" element={<Login />} />
+    <Routes>
+      {/* Login  */}
+      <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/login" element={<Login />} />
 
-        <Route path="/" element={<Dashboard />}>
-          {/* Students  */}
-          <Route path="/profile" element={<StudentProfile />} />
-          <Route path="/teacher-profile" element={<TeacherProfile />} />
+      <Route path="/" element={<Dashboard />}>
+        {/* Students  */}
+        <Route path="/profile" element={<StudentProfile />} />
+        <Route path="/teacher-profile" element={<TeacherProfile />} />
 
-          <Route path="/check-students" element={<CheckStudents />} />
-          <Route path="/add-student" element={<AddStudent />} />
-          <Route path="/evaluationform" element={<EvaluationForm />} />
-          <Route path="/evaluationstats" element={<EvaluationStats />} />
+        <Route path="/check-students" element={<CheckStudents />} />
+        <Route path="/add-student" element={<AddStudent />} />
+        <Route path="/evaluationform" element={<EvaluationForm />} />
+        <Route path="/evaluationstats" element={<EvaluationStats />} />
 
-          {/* Tutors  */}
-          <Route path="/check-teachers" element={<CheckTeachers />} />
-          <Route path="/add-teacher" element={<AddTeacher />} />
-        </Route>
-      </Routes>
-    </div>
+        {/* Tutors  */}
+        <Route path="/check-teachers" element={<CheckTeachers />} />
+        <Route path="/add-teacher" element={<AddTeacher />} />
+      </Route>
+    </Routes>
   );
 }
 

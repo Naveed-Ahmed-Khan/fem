@@ -32,13 +32,13 @@ const FormTemplate = ({ questions }) => {
                     /* scope="col" */
                     className="w-1/12 font-medium px-5 py-3 bg-gray-100  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
                   >
-                    Unsatifactory
+                    Unsatisfactory
                   </th>
                   <th
                     /* scope="col" */
                     className="w-1/12 font-medium px-5 py-3 bg-gray-100  border-b border-gray-200 text-gray-800  text-left text-sm uppercase "
                   >
-                    Satifactory
+                    Satisfactory
                   </th>
                   <th
                     /* scope="col" */

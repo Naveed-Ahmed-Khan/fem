@@ -1,9 +1,8 @@
 import { SiShopware } from "react-icons/si";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import Input from "../Components/UI/Input";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import { Button } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
@@ -11,7 +10,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useStateContext();
-
+  const [errorMessage, setErrorMessage] = useState("");
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -25,6 +24,8 @@ const Login = () => {
       password: Yup.string().required("Password is Required"), */
     }),
     onSubmit: (values) => {
+      console.log(values);
+      setErrorMessage("");
       localStorage.setItem("user", values.email);
       setUser(values.email);
 
@@ -32,8 +33,10 @@ const Login = () => {
         navigate("/check-students");
       } else if (values.email.includes("student")) {
         navigate("/profile");
-      } else {
+      } else if (values.email.includes("teacher")) {
         navigate("/teacher-profile");
+      } else {
+        setErrorMessage("Invalid Credentials! Try again.");
       }
       // alert(JSON.stringify(values, null, 2));
       //   login(values.email, values.password);
@@ -54,17 +57,53 @@ const Login = () => {
           <h1 className="text-secondary text-2xl font-bold mx-auto mb-4">
             Login
           </h1>
+          <input
+            className="e-input"
+            o /* nFocus={this.floatFocus}
+            onBlur={this.floatBlur} */
+            type="text"
+            placeholder="Last Name"
+          />
+
+          {errorMessage && (
+            <div className="mb-4 px-4 py-2 flex items-center justify-between border border-red-500 rounded">
+              <p className=" text-red-500">{errorMessage}</p>
+              <svg
+                onClick={() => {
+                  setErrorMessage("");
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-red-500 cursor-pointer"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          )}
+
           <div className="flex flex-col gap-4 mb-8">
             <div className="flex flex-col gap-1">
               <label>E-mail:</label>
-              <TextBoxComponent
+
+              <input
+                type="text"
+                name="email"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+              />
+              {/* <TextBoxComponent
                 type="text"
                 placeholder="asd@gmail.com"
                 cssClass="e-outline"
                 name="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
-              />
+              /> */}
               {formik.touched.email && formik.errors.email ? (
                 <div className="mt-1 text-sm text-red-500">
                   {formik.errors.email}

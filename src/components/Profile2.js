@@ -18,7 +18,9 @@ const Profile2 = () => {
         <div class="border-t border-gray-200">
           <dl>
             <div class="bg-gray-50 px-3 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class=" text-base font-medium text-gray-600">Student name</dt>
+              <dt class=" text-base font-medium text-gray-600">
+                Teacher's name
+              </dt>
               <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                 Mickael Poulaz
               </dd>
