@@ -57,13 +57,6 @@ const Login = () => {
           <h1 className="text-secondary text-2xl font-bold mx-auto mb-4">
             Login
           </h1>
-          <input
-            className="e-input"
-            o /* nFocus={this.floatFocus}
-            onBlur={this.floatBlur} */
-            type="text"
-            placeholder="Last Name"
-          />
 
           {errorMessage && (
             <div className="mb-4 px-4 py-2 flex items-center justify-between border border-red-500 rounded">
@@ -89,21 +82,14 @@ const Login = () => {
           <div className="flex flex-col gap-4 mb-8">
             <div className="flex flex-col gap-1">
               <label>E-mail:</label>
-
-              <input
-                type="text"
-                name="email"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-              />
-              {/* <TextBoxComponent
+              <TextBoxComponent
                 type="text"
                 placeholder="asd@gmail.com"
                 cssClass="e-outline"
                 name="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
-              /> */}
+              />
               {formik.touched.email && formik.errors.email ? (
                 <div className="mt-1 text-sm text-red-500">
                   {formik.errors.email}

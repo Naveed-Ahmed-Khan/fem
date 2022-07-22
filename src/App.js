@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import EvaluationForm from "./pages/EvaluationForm";
 import TeacherProfile from "./pages/TeacherProfile";
 import EvaluationStats from "./pages/EvaluationStats";
+import CheckCourses from "./pages/CheckCourses";
+import AddCourse from "./pages/AddCourse";
 
 function App() {
   const user = localStorage.getItem("user");
@@ -35,6 +37,10 @@ function App() {
         {/* Tutors  */}
         <Route path="/check-teachers" element={<CheckTeachers />} />
         <Route path="/add-teacher" element={<AddTeacher />} />
+
+        {/* Courses  */}
+        <Route path="/check-courses" element={<CheckCourses />} />
+        <Route path="/add-course" element={<AddCourse />} />
       </Route>
     </Routes>
   );
